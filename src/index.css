@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@300;400;500;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: "Cabinet Grotesk", sans-serif;
+  --font-mono: "Fira Code", monospace;
+
+  /* Calming Premium Beige and Classic Blue Palette */
+  --color-calm-950: #faf8f5; /* Warm linen beige background */
+  --color-calm-900: #f3eee3; /* Soft rich warm sand/cream for panels */
+  --color-calm-850: #e8dfcf; /* Warm beige shade border */
+  --color-calm-800: #dcd0bc; /* Soft sand-caramel border */
+  --color-calm-700: #bfaea0; /* Muted tan/sand accent */
+  --color-calm-500: #1e3a8a; /* Dark blue/navy indicator */
+  --color-calm-400: #0f4c81; /* Classic Blue primary */
+  --color-calm-300: #1d4ed8; /* Muted bright blue */
+  --color-calm-200: #dbeafe; /* Light blue accent */
+  --color-calm-100: #eff6ff; /* Soft warm blue milk */
+  --color-accent-sage: #0f4c81; /* Classic Blue accent */
+  --color-accent-gold: #b45309; /* Deep warm amber/gold for highlights */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-calm-950);
+    color: #1e293b; /* Deep slate-800 for high legibility */
+    overflow-x: hidden;
+  }
+  
+  /* Custom scrollbar optimized to prevent eye fatigue */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-calm-950);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-calm-800);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent-sage);
+  }
+}
+
+/* Custom interactive inputs focused on high accessibility and soft contrast */
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--color-accent-sage);
+  box-shadow: 0 0 0 2px rgba(143, 188, 148, 0.15);
+}
+
+/* Glassmorphism utility with soft earth colors */
+.glass-panel {
+  background: rgba(18, 26, 24, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px border rgba(45, 69, 63, 0.4);
+}
+
+/* Elegant ambient lights */
+.ambient-glow-1 {
+  background: radial-gradient(circle, rgba(143, 188, 148, 0.08) 0%, transparent 70%);
+}
+.ambient-glow-2 {
+  background: radial-gradient(circle, rgba(223, 194, 152, 0.06) 0%, transparent 70%);
+}
